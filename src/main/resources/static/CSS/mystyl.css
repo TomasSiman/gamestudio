@@ -1,0 +1,131 @@
+body{
+	background: url("../pictures/bielepozadie3.jpg");
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.buttons{
+	text-align: center;
+}
+
+html {
+	font-size: 1em;
+}
+
+#newGame {
+	font-size: 1em;
+	color: black;
+}
+
+h2{
+	text-align: center;
+	font-family: "Tw Cen MT" !important;
+}
+
+h3{
+	font-family: "Tw Cen MT" !important;
+}
+h5{
+	text-align: center;
+}
+.like{
+	text-align: center;
+}
+
+.table {
+	line-height: 1em;
+	table-layout: fixed;
+	width:20em !important;
+	height: 15em !important;
+	text-align: center;
+	margin: auto;
+	font-family: "Tw Cen MT" !important;
+	font-size: 120%;
+}
+
+td, tr, th {
+	border-style: double;
+	border-style: solid;
+	border: 2px solid black;	
+}
+
+.tile {
+	color: black;
+}
+
+.setToRight{
+	text-align: right;
+}
+
+.stars{
+	text-align: center !important;
+}
+
+span{
+	padding-left:5px;
+}
+
+span2{
+	color: grey;
+	padding-left: 5px;
+}
+
+span3{
+	color: red;
+	text-decoration: underline;
+}
+
+.header{
+	padding-left: 5px;
+	padding-top:5px;
+}
+
+.rating{
+	text-align: center;
+}
+
+.rating_puzzle{
+	text-align: center;
+}
+
+table.scoreTable td, table.scoreTable tr, table.scoreTable th {
+   border:thin solid black;
+  height: 1.5em;
+  width: 130px;
+  text-align: center;   
+}
+
+table.commentTable td, table.commentTable tr, table.commentTable th {
+   border: thin solid black;
+  height: 1.5em;
+  width: 130px;
+  text-align: center;
+}
+
+.message{
+	text-align: center;
+	font-family: "Tw Cen MT" !important;
+	font-size: 250%;
+	color: green;
+}
+
+
+

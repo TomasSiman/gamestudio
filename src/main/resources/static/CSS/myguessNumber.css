@@ -1,0 +1,7 @@
+body{
+	background: url("../pictures/bielepozadie3.jpg");
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

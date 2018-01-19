@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/todoList.css" />
+</head>
+
+<body>
+
+<main>
+    <form id="frmAddRemTask">
+        <label>New task:
+            <input type="text" id="inNewTask" maxlength="100" placeholder="Do something"/>
+        </label>
+        
+        <button type="button" id="btAddTask">Add task</button>
+        <button type="button"  id="btRemCmpl">Remove completed tasks</button>
+    </form>
+    <h2>Tasks</h2>
+    <form id="frmTasks">
+    </form>
+</main>
+
+
+<!-- Mustache sablona pre jednu ulohu -->
+<script id="tmplTask" type="text/template">
+    <button class="taskAsBt activeTask" type="button" data-id="{{id}}">
+        {{task}}
+    </button>
+</script>
+
+
+<!-- Vlozenie jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+</script> <!--Linka na CDN je z https://code.jquery.com/-->
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+
+<!-- Vlozenie Mustache -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<!-- Vlozenie skriptu pre tuto stranku  -->
+<script src="js/todoListZaklad.js"></script>
+
+
+</body>
+</html>

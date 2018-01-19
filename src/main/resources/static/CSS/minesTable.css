@@ -1,0 +1,70 @@
+body{
+	background: url("../pictures/bielepozadie3.jpg");
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.center {
+    margin: auto;
+    border-collapse: collapse;
+    line-height: 0;
+       
+}
+
+.center{
+	text-align: center;
+}
+
+.buttons{
+	text-align: center;
+}
+
+table.scoreTable td, table.scoreTable tr, table.scoreTable th {
+   border:thin solid black;
+  height: 1.5em;
+  width: 130px;
+  text-align: center;   
+}
+
+table.commentTable td, table.commentTable tr, table.commentTable th {
+   border: thin solid black;
+  height: 1.5em;
+  width: 150px;
+  text-align: center;
+   }
+   
+h2{
+	text-align: center;
+	font-family: "Tw Cen MT" !important;
+}
+
+.textBottom{
+	text-align: center;
+	font-family: "Tw Cen MT" !important;
+	font-size: 150%;
+	color: green;
+}
+
+h3{
+	font-family: "Tw Cen MT" !important;
+	color: black !important;
+
+table, th, td, tr{
+ color: black !important;
+ border: 2px solid black;
+ padding: 10px;
+ font-size: 115%;
+}
+
+img {
+	height: 415px;
+	width: 550px;
+}
+.pic{
+	text-align: center;
+	margin: auto;	
+}
+
+

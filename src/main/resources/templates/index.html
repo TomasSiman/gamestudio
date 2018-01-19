@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>GameStudio</title>
+
+<link rel="stylesheet" href="css/myCssStyle.css" />
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+
+</head>
+<body>
+	<header>
+	
+		<h2>You are Welcome!</h2>
+		<div class="menu">
+			<a href="details.html">Details</a>
+			<div id="right" th:replace="fragments::nice_footer" />
+		</div>
+
+	</header>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<img src="pictures/mina.jpg" title="mines" alt="mines" />
+			</div>
+			
+			<div class="col-4">
+				<img src="pictures/puzzle.png" title="15puzzle" alt="15puzzle" />
+			</div>
+			
+			<div class="col-4">
+				<img src="pictures/GuessNumber.jpg" title="guess" alt="guess" />
+			</div>			
+		</div><hr />
+		
+		<div class="row">
+		<div class="col-4">
+				<h5>MineSweeper</h5>
+				<a href="/mines">Play</a>
+				<div th:replace="fragments::rating_mines" />
+				
+				<div  th:remove="${@userController.isLogged()} ? none : all">							
+		   		<span th:if="${@minesController.getFavorite()}">
+					<img style="width:25px;height:25px" src="pictures/favorite1.png" title="favorite" alt="favorite"/>
+				</span> 		
+				</div>
+
+		</div>
+		
+			<div class="col-4">
+				<h5>Puzzle</h5>
+				<a href="/puzzle">Play</a>
+				<div th:replace="fragments::rating_puzzle" />
+				
+				<div  th:remove="${@userController.isLogged()} ? none : all">							
+		   		<span th:if="${@puzzleController.getFavorite()}">
+					<img style="width:25px;height:25px" src="pictures/favorite1.png" title="favorite" alt="favorite"/>
+				</span> 		
+				</div>
+				
+			</div>
+			
+			<div class="col-4">
+				<h5>Guess Number</h5>
+				<a href="/guessNumber">Play</a>
+				<div th:replace="fragments::rating_guessNumber" />
+				
+				<div  th:remove="${@userController.isLogged()} ? none : all">							
+		   		<span th:if="${@guessNumberController.getFavorite()}">
+					<img style="width:25px;height:25px" src="pictures/favorite1.png" title="favorite" alt="favorite"/>
+				</span> 		
+				</div>
+
+			</div>
+			
+		</div><hr />
+		
+		<div class="row">
+			<div class="col-4">
+				<h5><i>Minesweeper is a single-player puzzle video game. The objective of the game is to clear a rectangular board containing hidden "mines" or bombs without detonating any of them, with help from clues about the number of neighboring mines in each field.</i></h5>
+	
+			</div>
+			
+			<div class="col-4">
+				<h5><i>The 15-puzzle is a sliding puzzle that consists of a frame of numbered square tiles in random order with one tile missing.The object of the puzzle is to place the tiles in order by making sliding moves that use the empty space.</i></h5>
+			</div>
+			
+			<div class="col-4">
+				<h5><i>Guess the secret number in the magician's hat. If your guess is too high or too low, you'll get a hint.</i></h5>
+			</div>
+			
+		</div>
+	</div><hr />
+	
+</body>
+</html>

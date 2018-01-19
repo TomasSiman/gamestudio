@@ -1,0 +1,112 @@
+body{
+	background: url("../pictures/background3.jpg");
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html {
+    font-size: 100%;
+    font-family: "Tw Cen MT" !important, sans-serif;
+    color: white !important;    
+}
+
+#right{
+align-items: flex-end;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #1a4adb;
+}
+
+h1, h2{
+	border-radius: 1rem;
+    padding:1.5rem;
+    text-align:center;
+    color: white !important;
+    font-family: "Tw Cen MT" !important;       
+}
+
+h3{
+	border-radius: 1rem;
+	text-align: center;
+	font-family: "Tw Cen MT" !important;
+}
+
+h4{
+border-radius: 1rem;
+    padding:1.5rem;
+    text-align:center;
+    font-family: "Tw Cen MT" !important;
+}
+
+h5{
+	color: white !important;
+	font-family: "Tw Cen MT" !important;	
+}
+
+select{
+	background-color: silver;
+}
+
+th{
+	padding: 0.5em;
+}
+
+li{
+	padding-left: 2em;
+}
+
+#frmNewScore{
+	text-align: center;
+}
+
+.loginStyle{
+	border: solid;
+	border-color: white;
+}
+
+.rating_mines{
+	color: #ffff00;
+}
+.rating_puzzle{
+	color: #ffff00;
+}
+.rating_guessNumber{
+	color: #ffff00;
+}
+span{
+	color: #ffff00;
+}
+ table, th, td{
+ color: white !important;
+ border: 1px solid white;
+ padding: 10px;
+ font-size: 150%;
+ margin-left: auto;
+ margin-right: auto;
+ }
+hr{
+	border-color: grey !important;	
+}
+span2{
+	color: grey;	
+}
+span3{
+	color: red;
+	text-decoration: underline;
+}
+.header{	
+	padding-top:25px;
+	padding-left:5px;
+}
+.menu{
+	padding-left: 5px;
+}
+img {
+	height: 265px;
+	width: 265px;
+}
+

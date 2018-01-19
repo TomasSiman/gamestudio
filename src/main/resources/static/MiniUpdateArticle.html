@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Update Article</title>
+</head>
+<body>
+    <form id="frmArt" method="post" action="badProcessing.html">
+        <label for="title">Názov:</label><br>
+        <input type="text" name="title" id="title" size="50"  maxlength="100" pattern="\S[\S\s]*" required title="Názov článku. Povinná položka. Maximálna dĺžka: 100 znakov. Prvý znak nesmie byť medzera." placeholder="napr. Môj prvý príbeh" />
+        <!--
+        \s =  match any white space character
+        \S =  match any non-white space character
+        -->
+        <br>
+        <label for="content">Text článku:</label><br>
+        <textarea name="content" id="content" spellcheck="true" lang="sk" cols="52" rows="10" required title="Obsah článku. Povinná položka.  Môže byť obyčajný text alebo html."></textarea>
+        <br>
+        <button type="submit">
+            Ulož článok
+        </button>
+    </form>
+
+    <!-- Vlozenie jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+    <!-- Vlozenie skriptu tohto dokumentu -->
+    <script src="js/05miniPostArticle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+html {
+    font-size: 100%;
+    font-family: "Tw Cen MT", Arial, Helvetica, sans-serif;
+    font-style: normal; /*normal, italic, oblique (obl.-similar to italic*/
+    font-weight: normal; /*normal, bold*/
+    text-align: justify; /*justify, left, right, center*/
+    color: black;
+}
+
+h1, h2{
+    border-radius: 1rem;
+    padding:0.5rem;
+    text-align:center;
+    background-color: rgb(204,153,0);
+}
+
+
+
+
+@media only screen and (min-width: 600px){
+    body{
+        min-width: 20rem;
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 599px){
+    body{
+        width: 100%;
+    }
+}
+
+main{margin-top: 1rem;}
+
+button{
+    background-color: rgb(255, 228, 113);
+    border-radius: 1em;
+    border-width: 0.1em;
+    border-color: rgb(204,153,0);
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+button:hover{
+    background-color: rgb(255, 148, 71);
+}
+
+button.taskAsBt{
+    display: block;
+    width:100%;
+    border:none;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+button.activeTask{
+    background-color: rgb(175, 255, 80);
+}
+
+button.completedTask{
+    background-color: rgb(200, 200, 200);
+    text-decoration: line-through;
+}

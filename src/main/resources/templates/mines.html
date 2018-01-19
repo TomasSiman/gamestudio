@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/css/minesTable.css" />
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="/css/bootstrap.css" />
+<link rel="stylesheet" href="/css/font-awesome.css" />
+<link rel="stylesheet" href="/css/rating.css"/>
+<link rel="stylesheet" href="/css/miny.css"/>
+
+<meta charset="ISO-8859-1"></meta>
+<title>Minesweeper</title>
+</head>
+<body>
+	<header>
+		<div th:replace="fragments::header" />
+		<hr />
+		<div th:replace="fragments::nice_footer" />
+		<hr />	
+		<h2>MineSweeper</h2>
+	</header>
+	<div th:remove="${@userController.isLogged()} ? none : all" class="rating">
+		<a href="/ratingMines?value=5">&#9733;</a>
+		<a href="/ratingMines?value=4">&#9733;</a>
+		<a href="/ratingMines?value=3">&#9733;</a>
+		<a href="/ratingMines?value=2">&#9733;</a>
+		<a href="/ratingMines?value=1">&#9733;</a>
+	</div>
+	
+	<div th:replace="fragments::rating_mines" />
+	
+	<div style="padding-bottom: 5px" class="like" th:remove="${@userController.isLogged()} ? none : all">	
+	<h5>Favorite</h5>		
+		<a  href='/addFavorite_mines'>
+			<span th:if="${favorite}">
+   				<img style="width:25px;height:25px" src="pictures/favorite1.png" title="favorite" alt="favorite"/>
+			</span>
+		   		<span th:if="${not favorite}">
+					<img style="width:25px;height:25px" src="pictures/favorite2.png" title="favorite" alt="favorite"/>
+				</span> 
+		</a>
+	</div>
+	<p th:utext='${minesController.render()}' />
+	<div class="message" th:utext='${minesController.message}' />
+	
+	<div class='buttons'>
+		<button onclick="window.location.href='/mines'">New Game</button>
+		<button onclick="window.location.href='/mines_mark'">
+			Action : <span th:if="${minesController.marking}">Mark</span> <span
+				th:if="${not minesController.marking}">Open</span>
+		</button>
+	</div>
+	<br />
+	<hr />
+	<div class="container">
+		<div class="row">
+	<div class="col-9">
+			<form th:remove="${@userController.isLogged()} ? none : all" class="loginStyle" action='/commentMines' method='post'>
+				<h4>Comment:</h4>
+				<input type='text' name='content' />
+				<input
+						type='submit' value='OK' />
+			</form>
+				<h3>Comments</h3>
+				<table class="commentTable">
+					<tbody>
+						<tr>
+							<th>Player</th>
+							<th>Comment</th>
+							<th>Created</th>
+						</tr>
+						<tr th:each='comment : ${comment}'>
+							<td th:text='${comment.username}' />
+							<td th:text='${comment.content}' />
+							<td th:text='${comment.createdOn}' />
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+		<div class="col-9">
+			<h3>Top Scores</h3>
+				<table class="scoreTable">
+					<tbody>
+						<tr>
+							<th>Player</th>
+							<th>Score</th>
+						</tr>
+						<tr th:each='score : ${scores}'>
+							<td th:text='${score.username}' />
+							<td th:text='${score.value}' />
+						</tr>
+					</tbody>
+				</table>
+			</div><hr/>
+		</div>
+	</div>
+</body>
+</html>

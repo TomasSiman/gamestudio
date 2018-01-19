@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="header" th:fragment="header">
+<a href='/'>Home</a>
+</div>
+
+<div class="rating_mines" th:fragment="rating_mines">
+Average rating: <span th:text='${#numbers.formatDecimal(@minesController.rating,1,2)}'/>/5
+</div>
+
+<div class="rating_puzzle" th:fragment="rating_puzzle">
+Average rating: <span th:text='${#numbers.formatDecimal(@puzzleController.rating,1,2)}'/>/5
+</div>
+
+<div class="rating_guessNumber" th:fragment="rating_guessNumber">
+Average rating: <span th:text='${#numbers.formatDecimal(@guessNumberController.rating,1,2)}'/>/5
+</div>
+
+<div th:fragment="nice_footer">
+<span2 th:if='${@userController.logged}'>
+Logged as <span3 th:text='${@userController.loggedPlayer?.login}'/>
+
+<a href= "/logout">Logout /</a>
+</span2>
+
+<span th:if='${not @userController.logged}'>
+<a href='/user'>Login /</a>
+</span>
+
+<a href='/user'>Register</a>
+</div>
+
+<div class="stars" th:fragment="rating_form">
+<div class="rating">
+<span><a href="">&#9733;</a></span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>GameStudio</title>
+<link rel="stylesheet" href="css/mystyl.css" />
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/myCssStyle.css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+	<header>
+		<h2>Gamestudio</h2>
+		<div class="menu">
+			<a href="MyGamestudioScore.html">Home</a> | <a href="about.html">About</a> | <a href="/mines">Mines</a> | <a href="/puzzle">Puzzle</a> |
+			<a target="_blank" href="https://sk.wikipedia.org">Games info</a> | <a href="/user">Login</a>  <div th:replace="fragments::nice_footer"/>
+
+		</div>
+		
+	</header>
+	
+	<hr>
+
+
+
+	<select id="games">
+		<option value="" selected disabled hidden>Choose here</option>
+		<option value="tomajerry">TomAJerry</option>
+		<option value="sudoku">Sudoku</option>
+		<option value="twister">Twister</option>
+
+	</select>
+	<button id="zobraz" onclick="javascript:zobrazSkore();">Show skore</button>
+	
+	
+    <form id="frmNewScore">
+        <label>Write Score:
+            <input type="text" id="newScore" placeholder="Enter score"/>
+        </label>
+    
+
+        <label>Write Username:
+            <input type="text" id="newUsername" placeholder="Enter username"/>
+        </label>
+        <button type="button" id="btSaveScore">Save score</button>
+    </form>
+
+	<hr>
+
+	<h3>Score table</h3>
+	<div id="scoreTable"></div>
+
+
+
+	<!-- Mustache sablona pre jednu ulohu -->
+	<script id="tmplScores" type="text/template">
+
+
+
+  <ol> 
+<table>
+   <tr><th>UserName</th><th>score</th></tr>
+    {{#.}}
+</table>
+
+    <li><td><b>{{username}}</b></td>    <td><b>{{value}}</b></td></li>
+    {{/.}}
+    </ol>
+</script>
+
+
+	<!-- Vlozenie jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous">
+		
+	</script>
+	<!--Linka na CDN je z https://code.jquery.com/-->
+	<script>
+		window.jQuery
+				|| document.write('<script src="js/jquery.min.js"><\/script>')
+	</script>
+
+
+	<!-- Vlozenie Mustache -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+	<script>
+		window.Mustache
+				|| document
+						.write('<script src="js/mustache.min.js"><\/script>')
+	</script>
+
+	<!-- Vlozenie skriptu pre tuto stranku  -->
+	<!-- <script src="js/ajaxDemo.js"></script> -->
+	<script src="js/myGamestudio.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Mustache šablona</title>
+</head>
+<body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<script>
+    var os1 = {
+        meno:"Ján",
+        priezvisko: "Trieska"
+    }
+
+    var tmpl1="<p> {{meno}} {{priezvisko}} </p>";
+
+    document.write(Mustache.render(tmpl1,os1));
+
+</script>
+
+<hr>
+
+
+<script>
+    var os2 = {
+        meno:"Ján",
+        priezvisko: "Trieska",
+        zaluby:["telka","les"]
+    }
+
+    var tmpl2a="<p> {{meno}} {{priezvisko}} <br>Záľuby: {{zaluby}} </p>";
+
+    document.write(Mustache.render(tmpl2a,os2));
+
+</script>
+
+<hr>
+
+
+<script>
+
+    var tmpl2b="<p> {{meno}} {{priezvisko}} <br>Záľuby: {{#zaluby}} {{.}} * {{/zaluby}} </p>";
+
+    document.write(Mustache.render(tmpl2b,os2));
+
+</script>
+
+
+<hr>
+
+<script>
+    var os3 = {
+        "osoby":[
+            {
+                meno: "Ján",
+                priezvisko: "Trieska",
+                zaluby: ["telka", "les"]
+            },
+            {
+                meno: "Jozef",
+                priezvisko: "Mrvk",
+            }
+        ]
+    };
+
+    var tmpl3a="{{#osoby}} <p> {{meno}} {{priezvisko}} <br>Záľuby: {{zaluby}} </p> {{/osoby}}";
+
+    document.write(Mustache.render(tmpl3a,os3));
+
+</script>
+
+<hr>
+
+<script>
+    var tmpl3b="{{#osoby}} <p> {{meno}} {{priezvisko}} " +
+            "<br>Záľuby: {{zaluby}} {{^zaluby}} žiadne {{/zaluby}} " +
+            "</p> {{/osoby}}";
+
+    document.write(Mustache.render(tmpl3b,os3));
+
+</script>
+
+<hr>
+
+<script>
+    var os4 = [
+            {
+                meno: "Ján",
+                priezvisko: "Trieska",
+                zaluby: ["telka", "les"]
+            },
+            {
+                meno: "Jozef",
+                priezvisko: "Mrvk",
+            }
+        ];
+
+    var tmpl4="{{#.}} <p> {{meno}} {{priezvisko}} " +
+            "<br>Záľuby: {{zaluby}} {{^zaluby}} žiadne {{/zaluby}} " +
+            "</p> {{/.}}";
+
+    document.write(Mustache.render(tmpl4,os4));
+
+</script>
+
+
+<hr>
+<hr>
+
+<script>
+    var artcl = {
+        "header": "<h2>Borovica</h2>",
+        "content":"<p>Ihličnatý strom s mäkkým drevom. Jej ihličie opadáva každé  2 až 4 roky.</p><dl><dt>Latinský názov:<dd>Pinus.<dt>Oddelenie:<dd>Borovicorasty</dl>"
+    };
+
+    var tmpl5a="{{header}} {{content}}";
+
+    document.write(Mustache.render(tmpl5a,artcl));
+
+</script>
+
+<hr>
+
+<script>
+    var tmpl5b="{{{header}}} {{{content}}}";
+
+    document.write(Mustache.render(tmpl5b,artcl));
+
+</script>
+
+
+</body>
+</html>
